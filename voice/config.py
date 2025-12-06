@@ -27,6 +27,7 @@ class Settings:
     voice_input_dir: Path = (BASE_DIR / os.getenv("VOICE_INPUT_DIR", "voice/input_voice")).resolve()
     voice_output_dir: Path = (BASE_DIR / os.getenv("VOICE_OUTPUT_DIR", "voice/output_voice")).resolve()
     transcript_dir: Path = (BASE_DIR / os.getenv("TRANSCRIPT_DIR", "transcripts")).resolve()
+    recorded_voice_dir: Path = (BASE_DIR / os.getenv("RECORDED_VOICE_DIR", "recorded_voice")).resolve()
 
     # Audio I/O
     sample_rate: int = int(os.getenv("SAMPLE_RATE", "16000"))
@@ -49,7 +50,12 @@ class Settings:
 settings = Settings()
 
 # Ensure directories exist
-for _dir in (settings.voice_input_dir, settings.voice_output_dir, settings.transcript_dir):
+for _dir in (
+    settings.voice_input_dir,
+    settings.voice_output_dir,
+    settings.transcript_dir,
+    settings.recorded_voice_dir,
+):
     _dir.mkdir(parents=True, exist_ok=True)
 
 

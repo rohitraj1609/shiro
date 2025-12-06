@@ -1,0 +1,17 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# Environment
+.env
+.venv/
+venv/
+
+# Local audio artifacts
+recorded_voice/
+voice/input_voice/recordings/
+
+# Transcripts (can be regenerated from audio)
+transcripts/
+
+

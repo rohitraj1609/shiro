@@ -37,7 +37,8 @@ def text_to_speech(text: str, save_to_file: bool = True) -> Optional[Path]:
     output_path: Optional[Path] = None
     if save_to_file:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        output_path = settings.voice_output_dir / f"tts_{timestamp}.wav"
+        # Save TTS output into the dedicated recorded_voice directory.
+        output_path = settings.recorded_voice_dir / f"tts_{timestamp}.wav"
         output_path.parent.mkdir(parents=True, exist_ok=True)
         # Queue save-to-file; actual writing happens on runAndWait()
         engine.save_to_file(text, str(output_path))

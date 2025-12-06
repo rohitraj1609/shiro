@@ -61,9 +61,10 @@ def choose_and_speak_transcript() -> None:
 
 def main_menu() -> None:
     print(f"=== {settings.app_name} (voice ↔ text, local) ===")
-    print(f"Input voice dir : {settings.voice_input_dir}")
-    print(f"Output voice dir: {settings.voice_output_dir}")
-    print(f"Transcripts dir : {settings.transcript_dir}")
+    print(f"Input voice dir      : {settings.voice_input_dir}")
+    print(f"Recorded input dir   : {settings.voice_input_dir / 'recordings'}")
+    print(f"Recorded voice (TTS) : {settings.recorded_voice_dir}")
+    print(f"Transcripts dir      : {settings.transcript_dir}")
 
     while True:
         print("\n==== Menu ====")
