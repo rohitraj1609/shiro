@@ -1,0 +1,2 @@
+# source_audio: /Users/user/Desktop/shiro/shiro/voice/input_voice/input_20251206_202750.wav
+
